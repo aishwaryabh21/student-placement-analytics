@@ -149,7 +149,7 @@ def tab_overview(df: pd.DataFrame):
     # Placement distribution chart
     with st.spinner("Rendering placement distribution..."):
         fig_dist = eda.plot_placement_distribution(df)
-        st.plotly_chart(fig_dist, use_container_width=True)
+        st.plotly_chart(fig_dist, use_container_width=True, key="overview_placement_distribution")
 
     st.divider()
 
@@ -158,17 +158,17 @@ def tab_overview(df: pd.DataFrame):
     with col_left:
         with st.spinner("Rendering CGPA Band chart..."):
             fig_band = eda.plot_cgpa_band_vs_placement(df)
-            st.plotly_chart(fig_band, use_container_width=True)
+            st.plotly_chart(fig_band, use_container_width=True, key="overview_cgpa_band")
 
     with col_right:
         with st.spinner("Rendering Branch chart..."):
             fig_branch = eda.plot_placement_by_branch(df)
-            st.plotly_chart(fig_branch, use_container_width=True)
+            st.plotly_chart(fig_branch, use_container_width=True, key="overview_branch")
 
     # Placement by Gender
     with st.spinner("Rendering Gender chart..."):
         fig_gender = eda.plot_placement_by_gender(df)
-        st.plotly_chart(fig_gender, use_container_width=True)
+        st.plotly_chart(fig_gender, use_container_width=True, key="overview_gender")
 
 
 # ===========================================================================
@@ -185,11 +185,11 @@ def tab_academic(df: pd.DataFrame):
     col_left, col_right = st.columns(2)
     with col_left:
         with st.spinner("Rendering CGPA distribution..."):
-            st.plotly_chart(eda.plot_cgpa_distribution(df), use_container_width=True)
+            st.plotly_chart(eda.plot_cgpa_distribution(df), use_container_width=True, key="academic_cgpa_distribution")
 
     with col_right:
         with st.spinner("Rendering CGPA Band vs Placement..."):
-            st.plotly_chart(eda.plot_cgpa_band_vs_placement(df), use_container_width=True)
+            st.plotly_chart(eda.plot_cgpa_band_vs_placement(df), use_container_width=True, key="academic_cgpa_band")
 
     st.divider()
 
@@ -197,21 +197,21 @@ def tab_academic(df: pd.DataFrame):
     col_left2, col_right2 = st.columns(2)
     with col_left2:
         with st.spinner("Rendering Backlogs chart..."):
-            st.plotly_chart(eda.plot_backlogs_vs_placement(df), use_container_width=True)
+            st.plotly_chart(eda.plot_backlogs_vs_placement(df), use_container_width=True, key="academic_backlogs")
 
     with col_right2:
         with st.spinner("Rendering Aptitude chart..."):
-            st.plotly_chart(eda.plot_aptitude_vs_placement(df), use_container_width=True)
+            st.plotly_chart(eda.plot_aptitude_vs_placement(df), use_container_width=True, key="academic_aptitude")
 
     st.divider()
 
     # CGPA vs Aptitude Scatter
     with st.spinner("Rendering CGPA vs Aptitude scatter plot..."):
-        st.plotly_chart(eda.plot_cgpa_vs_aptitude_scatter(df), use_container_width=True)
+        st.plotly_chart(eda.plot_cgpa_vs_aptitude_scatter(df), use_container_width=True, key="academic_cgpa_aptitude")
 
     # Degree breakdown
     with st.spinner("Rendering Degree chart..."):
-        st.plotly_chart(eda.plot_placement_by_degree(df), use_container_width=True)
+        st.plotly_chart(eda.plot_placement_by_degree(df), use_container_width=True, key="academic_degree")
 
 
 # ===========================================================================
@@ -244,23 +244,23 @@ def tab_skills(df: pd.DataFrame):
     col_l, col_r = st.columns(2)
     with col_l:
         with st.spinner("Rendering Coding Skills chart..."):
-            st.plotly_chart(eda.plot_coding_skills_vs_placement(df), use_container_width=True)
+            st.plotly_chart(eda.plot_coding_skills_vs_placement(df), use_container_width=True, key="skills_coding")
     with col_r:
         with st.spinner("Rendering Communication Skills chart..."):
-            st.plotly_chart(eda.plot_communication_skills_vs_placement(df), use_container_width=True)
+            st.plotly_chart(eda.plot_communication_skills_vs_placement(df), use_container_width=True, key="skills_communication")
 
     # Soft Skills + Aptitude side by side
     col_l2, col_r2 = st.columns(2)
     with col_l2:
         with st.spinner("Rendering Soft Skills chart..."):
-            st.plotly_chart(eda.plot_soft_skills_vs_placement(df), use_container_width=True)
+            st.plotly_chart(eda.plot_soft_skills_vs_placement(df), use_container_width=True, key="skills_soft")
     with col_r2:
         with st.spinner("Rendering Aptitude chart..."):
-            st.plotly_chart(eda.plot_aptitude_vs_placement(df), use_container_width=True)
+            st.plotly_chart(eda.plot_aptitude_vs_placement(df), use_container_width=True, key="skills_aptitude")
 
     # Skills Composite box plot
     with st.spinner("Rendering Skills Composite chart..."):
-        st.plotly_chart(eda.plot_skills_composite_vs_placement(df), use_container_width=True)
+        st.plotly_chart(eda.plot_skills_composite_vs_placement(df), use_container_width=True, key="skills_composite")
 
 
 # ===========================================================================
@@ -277,21 +277,21 @@ def tab_activity(df: pd.DataFrame):
     col_l, col_r = st.columns(2)
     with col_l:
         with st.spinner("Rendering Internships chart..."):
-            st.plotly_chart(eda.plot_internships_vs_placement(df), use_container_width=True)
+            st.plotly_chart(eda.plot_internships_vs_placement(df), use_container_width=True, key="activity_internships")
     with col_r:
         with st.spinner("Rendering Projects chart..."):
-            st.plotly_chart(eda.plot_projects_vs_placement(df), use_container_width=True)
+            st.plotly_chart(eda.plot_projects_vs_placement(df), use_container_width=True, key="activity_projects")
 
     # Certifications
     with st.spinner("Rendering Certifications chart..."):
-        st.plotly_chart(eda.plot_certifications_vs_placement(df), use_container_width=True)
+        st.plotly_chart(eda.plot_certifications_vs_placement(df), use_container_width=True, key="activity_certifications")
 
     st.divider()
 
     # Top factors (point-biserial correlation)
     with st.spinner("Computing top placement factors..."):
         fig_factors, factors_df = eda.plot_top_factors(df)
-        st.plotly_chart(fig_factors, use_container_width=True)
+        st.plotly_chart(fig_factors, use_container_width=True, key="activity_factors")
 
     with st.expander("View correlation values table"):
         st.dataframe(
@@ -304,7 +304,7 @@ def tab_activity(df: pd.DataFrame):
 
     # Correlation heatmap
     with st.spinner("Rendering correlation heatmap..."):
-        st.plotly_chart(eda.plot_correlation_heatmap(df), use_container_width=True)
+        st.plotly_chart(eda.plot_correlation_heatmap(df), use_container_width=True, key="activity_heatmap")
 
 
 # ===========================================================================
