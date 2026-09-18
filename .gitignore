@@ -1,0 +1,18 @@
+# Bob IDE workspace
+.bob/
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables
+.env
+
+# OS-generated files
+.DS_Store
+Thumbs.db
