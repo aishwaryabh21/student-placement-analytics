@@ -216,8 +216,8 @@ Student_Placement_Analytics/
 
 ```bash
 # 1. Clone or download the repository
-git clone <repository-url>
-cd Student_Placement_Analytics
+git clone https://github.com/aishwaryabh21/student-placement-analytics
+cd student-placement-analytics
 
 # 2. (Recommended) Create and activate a virtual environment
 python -m venv venv
@@ -269,7 +269,13 @@ python src/insights.py
 
 ## Dataset Source
 
-`train.csv` and `test.csv` are provided as part of the IBM Virtual Internship project dataset. Both files are included in this repository.
+`train.csv` and `test.csv` are provided as part of the IBM Virtual Internship project dataset. Both files are included in this repository:
+
+**GitHub Repository:** [https://github.com/aishwaryabh21/student-placement-analytics](https://github.com/aishwaryabh21/student-placement-analytics)
+
+The dataset files (`train.csv`, `test.csv`) can be found directly at:
+- `https://github.com/aishwaryabh21/student-placement-analytics/blob/main/train.csv`
+- `https://github.com/aishwaryabh21/student-placement-analytics/blob/main/test.csv`
 
 ---
 
